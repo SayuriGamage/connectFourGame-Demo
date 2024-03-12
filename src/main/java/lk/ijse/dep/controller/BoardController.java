@@ -33,14 +33,14 @@ public class BoardController implements BoardUI {
     private Player humanPlayer;
     private Player aiPlayer;
 
-    private void initializeGame() {
+   /* private void initializeGame() {
         Board newBoard = new BoardImpl(this);
         humanPlayer = new HumanPlayer(newBoard);
         aiPlayer = new AiPlayer(newBoard);
-    }
+    }*/
 
     public void initialize() {
-        initializeGame();
+      //  initializeGame();
         grpCols.getChildren().stream().map(n -> (VBox) n).forEach(vbox -> vbox.setOnMouseClicked(mouseEvent -> colOnClick(vbox)));
     }
 
@@ -125,7 +125,7 @@ public class BoardController implements BoardUI {
     }
 
     public void btnPlayAgainOnAction(ActionEvent actionEvent) {
-        initializeGame();
+       // initializeGame();
         isAiPlaying = false;
         isGameOver = false;
         pneOver.setVisible(false);
