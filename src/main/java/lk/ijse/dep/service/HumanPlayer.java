@@ -8,6 +8,18 @@ public class HumanPlayer extends Player{
 
     @Override
     public void movePiece(int col) {
-        movePiece(col);
+        if(board.isLegalMove(col)){
+        board.updateMove(col,Piece.BLUE);
+        board.getBoardUI().update(col,true);
+        if((board.findWinner().getWinningPiece()).equals(Piece.EMPTY)) {
+
+            if (!board.existLegalMove()) {
+                board.getBoardUI().notifyWinner(new Winner(Piece.EMPTY));
+            }
+        }else{
+            board.getBoardUI().notifyWinner(board.findWinner());
+
+        }
+        }
     }
 }

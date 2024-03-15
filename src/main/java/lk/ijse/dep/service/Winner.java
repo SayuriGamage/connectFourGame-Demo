@@ -12,7 +12,16 @@ public class Winner {
 
     private int row2;
 
-
+    @Override
+    public String toString() {
+        return "Winner{" +
+                "winningPiece=" + winningPiece +
+                ", col1=" + col1 +
+                ", row1=" + row1 +
+                ", col2=" + col2 +
+                ", row2=" + row2 +
+                '}';
+    }
 
     public void setWinningPiece(Piece winningPiece) {
         this.winningPiece = winningPiece;
